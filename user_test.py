@@ -1,5 +1,6 @@
 import unittest
 from user import User
+import pyperclip
 
 class TestUser(unittest.TestCase):
     
@@ -91,6 +92,15 @@ class TestUser(unittest.TestCase):
 
         self.assertTrue(user_exists)
     
+    def test_copy_email(self):
+        '''
+        Test to confirm that we are copying the email address from a found name
+        '''
+
+        self.new_user.save_user()
+        User.copy_email("")
+
+        self.assertEqual(self.new_user.email,pyperclip.paste())
 
 
 if __name__ == '__main__':
