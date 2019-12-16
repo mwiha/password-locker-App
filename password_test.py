@@ -1,10 +1,10 @@
 import unittest
-from password import password
+from password import User
 
-class TestContact(unittest.TestCase):
+class TestUser(unittest.TestCase):
     
     '''
-    Test class that defines test cases for the contact class behaviours.
+    Test class that defines test cases for the User class behaviours.
 
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
@@ -13,7 +13,7 @@ class TestContact(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_password = password("Evans","Nyambane","0712345678","evans@ms.com") # create contact object
+        self.new_user = User("Alice","Mwihaki", "alicemwihaki99@gmail.com") 
 
 
     def test_init(self):
@@ -21,10 +21,29 @@ class TestContact(unittest.TestCase):
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_password.first_name,"Evans")
-        self.assertEqual(self.new_password.last_name,"Nyambane")
-        self.assertEqual(self.new_password.phone_number,"0712345678")
-        self.assertEqual(self.new_password.email,"evans@ms.com")
+        self.assertEqual(self.new_user.first_name,"Alice")
+        self.assertEqual(self.new_user.last_name,"Mwihaki")
+        self.assertEqual(self.new_user.email,"alicemwihaki99@gmail.com")
+        
+    def test_save_user(self):
+        '''
+        test_save_user test case to test if the user object is saved into
+         the user list
+        '''
+        self.new_user.save_user() # saving the new user
+        self.assertEqual(len(User.user_list),1)
+        
+        
+    def test_save_multiple_user(self):
+            '''
+            test_save_multiple_user to check if we can save multiple user
+            objects to our user_list
+            '''
+            self.new_user.save_user()
+            test_user = User("Test","user","test@user.com") # new user
+            test_user.save_user()
+            self.assertEqual(len(User.user_list),2)
+
 
 if __name__ == '__main__':
     unittest.main()
