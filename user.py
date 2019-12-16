@@ -42,3 +42,18 @@ class User:
             if user.user_name == name:
                 return user
 
+
+    @classmethod
+    def name_exist(cls,name):
+        '''
+        Method that checks if a user exists from the name list.
+        Args:
+            name: user name to search if it exists
+        Returns :
+            Boolean: True or false depending if the contact exists
+        '''
+        for user in cls.user_list:
+            if user.name == name:
+                    return True
+
+        return False
