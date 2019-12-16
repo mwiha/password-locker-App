@@ -1,5 +1,5 @@
 import unittest
-from user import User
+from password import User
 import pyperclip
 
 class TestUser(unittest.TestCase):
