@@ -1,5 +1,5 @@
 import unittest
-from password import User
+from user import User
 
 class TestUser(unittest.TestCase):
     
@@ -63,7 +63,21 @@ class TestUser(unittest.TestCase):
 
             self.new_user.delete_user()# Deleting a user object
             self.assertEqual(len(User.user_list),1)
+            
+            
+    def test_find_user_by_name(self):
+        '''
+        test to check if we can find a user by user name and display information
+        '''
 
+        self.new_user.save_user()
+        test_user = User("Test","user","test@user.com") # new name
+        
+
+        found_user = User.find_by_name("Alice")
+
+        self.assertEqual(found_user.email,test_user.email)
+    
 
 
 if __name__ == '__main__':
