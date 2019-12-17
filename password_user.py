@@ -45,7 +45,7 @@ def main():
     print("Hello Welcome . What is your name?")
     user_name = input()
 
-    print(f"Hello {user_name}. what would you like to do?")
+    print(f"Hello {user_name}.Welcome")
     print('\n')
     
     while True:

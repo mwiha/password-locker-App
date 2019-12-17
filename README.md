@@ -22,6 +22,7 @@ Alice Mwihaki
 - python3.6
 
 ## BDD ##
+
 - Type in keyword ``cc`` to create user
 1. Create User 
 - input: "User-Name"
