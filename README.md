@@ -1,6 +1,6 @@
 # Password-Locker #
 
-## Authour ##
+## Author ##
 
 Alice Mwihaki
 
