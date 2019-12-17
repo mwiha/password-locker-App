@@ -15,7 +15,7 @@ class TestUser(unittest.TestCase):
         Set up method to run before each test cases.
         '''
         self.new_user = User("Alice","Mwihaki", "account","alicemwihaki99@gmail.com") 
-        self.new_credetial = Credential("Alice","Mwihaki", "account","alicemwihaki99@gmail.com") 
+        self.new_credential = Credential("Alice","Mwihaki", "account","alicemwihaki99@gmail.com") 
 
 
     def test_init(self):
@@ -40,7 +40,7 @@ class TestUser(unittest.TestCase):
         test case to test if the credential object is saved into
          the  credential list
         '''
-        self.new_credetial.save_credential() 
+        self.new_credential.save_credential() 
         self.assertEqual(len(Credential.credential_list),1)
      
       
@@ -56,7 +56,7 @@ class TestUser(unittest.TestCase):
             self.assertEqual(len(User.user_list),2)
             
             
-     def test_save_multiple_credential(self):
+    def test_save_multiple_credential(self):
         '''
         test_save_multiple_credential to check if we can save multiple credential
         objects to our credential_list
@@ -64,7 +64,7 @@ class TestUser(unittest.TestCase):
         self.new_credential.save_credential()
         test_credential = Credential("Test","user","account","test@user.com") # new credential
         test_credential.save_credential()
-        4self.assertEqual(len(credential.credential_list),2)
+        self.assertEqual(len(Credential.credential_list),2)
             
                
             
@@ -96,7 +96,7 @@ class TestUser(unittest.TestCase):
         test_credential.save_credential()
 
         self.new_credential.delete_credential()# Deleting a credential object
-        self.assertEqual(len(credential_list),1)
+        self.assertEqual(len(Credential.credential_list),1)
             
             
     def test_find_user_by_name(self):
@@ -127,7 +127,7 @@ class TestUser(unittest.TestCase):
         
         
     def test_credential_exists(self):
-            '''
+        '''
         test to check if we can return a Boolean  if we cannot find the password.
         '''
 
@@ -135,7 +135,7 @@ class TestUser(unittest.TestCase):
         test_credential = Credential("Test","user","account","test@user.com") # new credential
         test_credential.save_credential()
 
-        credential_exists = credential.password_exist("password")
+        credential_exists = Credential.password_exist("password")
 
         self.assertTrue(credential_exists)
     
@@ -155,8 +155,8 @@ class TestUser(unittest.TestCase):
          returns a list of all password saved.
          """
          
-        self.assertEqual(credential.display_credential(),
-                          credential.credential_list)
+         self.assertEqual(Credential.display_credential(),
+                          Credential.credential_list)
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3.6
-from password import User
+from password import User, Credential
 
-def create_user(fname,lname,email):
+def create_user(fname,lname,account,email):
     '''
     Function to create a new user
     '''
-    new_user = User(fname,lname,email)
+    new_user = User(fname,lname,account,email)
     return new_user
 
 def save_users(user):
@@ -58,10 +58,61 @@ def main():
                             print("-"*10)
 
                             print ("First name ....")
-                            User.f_name = input()
+                            User.fname = input()
 
                             print("Last name ...")
-                            User.l_name = input()
+                            User.lname = input()
 
                             print("Email address ...")
                             User.e_address = input()
+                            
+                            print("account ...")
+                            User.e_address = input()
+                            
+                                            
+                            # save_users(create_user(fname,lname,account,address)) # create and save new user.
+                            # print ('\n')
+                            # print(f"New user {fname} {lname} created")
+                            print ('\n')
+            
+            
+            elif short_code == 'dc':
+    
+                        if display_user():
+                                print("Here is a list of all your contacts")
+                                print('\n')
+
+                                for contact in display_user():
+                                        print(f"{contact.first_name} {contact.last_name} .....{contact.name}")
+
+                                print('\n')
+                        else:
+                                print('\n')
+                                print("You dont seem to have any contacts saved yet")
+                                print('\n')
+
+            elif short_code == 'fc':
+
+                        print("Enter the name you want to search for")
+
+                        search_name = input()
+                        
+                        if find_user(search_user):
+                            search_user = find_user(search_name)
+                            print(f"{search_user.first_name} {search_user.last_name}")
+                            print('-' * 20)
+
+                            print(f"Password{search_user.name}")
+                            print(f"Email address.......{search_user.email}")
+                        else:
+                                    print("That user does not exist")
+
+            elif short_code == "ex":
+                            print("Bye .......")
+                            break
+            else:
+                            print("I really didn't get that. Please use the short codes")
+
+if __name__ == "__main__":
+    main()
+                            
