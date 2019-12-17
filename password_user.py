@@ -49,12 +49,12 @@ def main():
     print('\n')
     
     while True:
-            print("Use these short codes : cc - create a new contact, dc - display contacts, fc -find a contact, ex -exit the contact list ")
+            print("Use these short codes : cc - create a new user, dc - display user, fc -find a user, ex -exit the user list ")
 
             short_code = input().lower()
 
             if short_code == 'cc':
-                            print("New Contact")
+                            print("New user")
                             print("-"*10)
 
                             print ("First name ....")
@@ -79,7 +79,7 @@ def main():
             elif short_code == 'dc':
     
                         if display_user():
-                                print("Here is a list of all your contacts")
+                                print("Here is a list of all your user")
                                 print('\n')
 
                                 for contact in display_user():
@@ -88,7 +88,7 @@ def main():
                                 print('\n')
                         else:
                                 print('\n')
-                                print("You dont seem to have any contacts saved yet")
+                                print("You dont seem to have any user saved yet")
                                 print('\n')
 
             elif short_code == 'fc':
