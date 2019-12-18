@@ -97,7 +97,7 @@ def main():
 
                         search_name = input()
                         
-                        if find_user(search_user):
+                        if find_user(search_name):
                             search_user = find_user(search_name)
                             print(f"{search_user.first_name} {search_user.last_name}")
                             print('-' * 20)

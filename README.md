@@ -46,7 +46,7 @@ Alice Mwihaki
 
 - If one enters a short code that is not offered in the options, An error message is printed out on the terminal ie `Please use the short codes that are provided`
 
-## Technology USed ##
+## Technology Used ##
 
 - python3.6
 
